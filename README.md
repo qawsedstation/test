@@ -2,7 +2,7 @@
 
 This project was a small implemantation of a ecomerce platform that inlcudes a product the user can make a payment using his card details. 
 
-#Things I did for this Demo
+# Things I did for this Demo
 
 1. I used the latest Angular 7 and the latest Angular Material components https://material.angular.io/
 2. For the single store managment I used https://ngrx.io/ to implement the REDUX pattern
@@ -16,7 +16,7 @@ This project was a small implemantation of a ecomerce platform that inlcudes a p
 10. Run an online documentation of the project and it's components by running `npm run compodoc` and serving it at http://127.0.0.1:8080/
 11. Constantly checking for linting errors using codelyzer check them by running `npm run lint`
 
-#Things I could improve if I was spending more time 
+# Things I could improve if I was spending more time 
 1. There was no negative scenarios managed in this simple example I did only the happy path as there was not required.
 2. I could have spend more time on it to make it better and I could use material grid list or boostrap grid or any other framework but this is out of the scope of the this test
 3. I diden't use validation to the fields as I diden't have any specific requirments but If I had I would do this using reactiveForms. Only thing I did I add  HTML5 basic max-length rules.
