@@ -21,6 +21,14 @@ This project was a small implemantation of a ecomerce platform that inlcudes a p
 2. I could have spend more time on it to make it better and I could use material grid list or boostrap grid or any other framework but this is out of the scope of the this test
 3. I diden't use validation to the fields as I diden't have any specific requirments but If I had I would do this using reactiveForms. Only thing I did I add  HTML5 basic max-length rules.
 
+# Some final thoughts regarding PCI and security
+One of the concepts of PCI compliance is Client-side encryption (CSE) when the cardholder data is encrypted in the browser before it is ever sent to the merchant’s servers. This is something I didn’t found in the API documentation and in this example we send the data raw to World Pay servers. Although I would consider another layer between my frontend app and world pay API. So the communication between my server and my frontend would be encrypted and under HTTPS/SSL encryption for maximum security.
+
+Hosted fields are even a better approach for security perspective in this case you get a full hosted checkout page from WorldPay and you don’t have anything to do with payment forms in your website and therefore you are outside of the PCI scope as the responsibility now relies upon WorldPay that provide you an iframe.
+
+Of course as the owners of the e-commerce website we should never cache any sensitive data like cvv, passwords to the client and even to our own servers. Passwords for login should be hashed in our backend and stored in the databases as one-way encryption and then match the Hashed passwords. Things like cvv, Expiry dates, long card numbers should always be transferred using a secure private network to the payment gateway and never be stored in our place.
+
+
 
 ## Install Dependancies
 
