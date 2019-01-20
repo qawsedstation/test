@@ -1,0 +1,38 @@
+.container {
+  background: white;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  padding: 50px;
+  display: flex;
+}
+
+.product-area {
+  flex: 0 0 55%;
+}
+
+.payment-area {
+  flex: 1;
+}
+
+.spinner-wraper {
+  margin-top: 200px;
+}
+
+.spinner {
+  margin-left: 70px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .payment-area {
+    margin-left: 100px;
+  }
+}

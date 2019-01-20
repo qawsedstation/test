@@ -1,0 +1,17 @@
+<mat-card class="product">
+  <mat-card-header>
+    <mat-card-title>{{ product.description }}</mat-card-title>
+    <mat-card-subtitle>Buy this book with 20% off</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://static1.squarespace.com/static/5177f3c9e4b054c7ac38e2ba/5767f45f893fc027263fc5d6/5767f4a73e00be24e55098fd/1466430648221/Website_Portfolio_Design_Worldpay5.jpg?format=1000w"
+    alt="Book">
+  <mat-card-content>
+    <p>
+      This is an example book product that you can buy now.
+      Don't worry your card details will not be stored in our side because of PCI complience we going to get a
+      token
+      instend and then you can authorize the payment.
+    </p>
+  </mat-card-content>
+  <span class="price">Price: {{ product.value.amount | currency:'GBP' }}</span>
+</mat-card>

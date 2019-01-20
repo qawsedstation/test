@@ -1,0 +1,2704 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "AuthorizePaymentRequest",
+            "id": "interface-AuthorizePaymentRequest-1de8ed506217f933bd47854f3e99cf29",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentRequest {\n    transactionReference: string;\n    instruction: Instruction;\n}\ninterface Instruction {\n    description: string;\n    value: Value;\n    paymentInstrument: PaymentInstrument;\n}\ninterface Value {\n    currency: string;\n    amount: number;\n}\ninterface PaymentInstrument {\n    cvc: string;\n    type: string;\n    cardNumber: string;\n    cardHolderName: string;\n    billingAddress?: BillingAddress;\n    cardExpiryDate: CardExpiryDate;\n}\ninterface BillingAddress {\n    address1: string;\n    address2: string;\n    countryCode: string;\n    postalCode: string;\n    state: string;\n}\ninterface CardExpiryDate {\n    month: number;\n    year: number;\n}\n\n",
+            "properties": [
+                {
+                    "name": "instruction",
+                    "type": "Instruction",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "transactionReference",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "AuthorizePaymentResponse",
+            "id": "interface-AuthorizePaymentResponse-28241d42fda26f9d6151f754f66526aa",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.response.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentResponse {\n    outcome: string;\n    _links: _links;\n}\ninterface _links {\n    'payments:cancel': {\n        href: string;\n    };\n    'payments:settle': {\n        href: string;\n    };\n    'payments:partialSettle': {\n        href: string;\n    };\n    'payments:events': {\n        href: string;\n    };\n    curies: CuriesItem[];\n}\ninterface CuriesItem {\n    name: string;\n    href: string;\n    templated: boolean;\n}\n\n",
+            "properties": [
+                {
+                    "name": "_links",
+                    "type": "_links",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "outcome",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "BillingAddress",
+            "id": "interface-BillingAddress-1de8ed506217f933bd47854f3e99cf29",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentRequest {\n    transactionReference: string;\n    instruction: Instruction;\n}\ninterface Instruction {\n    description: string;\n    value: Value;\n    paymentInstrument: PaymentInstrument;\n}\ninterface Value {\n    currency: string;\n    amount: number;\n}\ninterface PaymentInstrument {\n    cvc: string;\n    type: string;\n    cardNumber: string;\n    cardHolderName: string;\n    billingAddress?: BillingAddress;\n    cardExpiryDate: CardExpiryDate;\n}\ninterface BillingAddress {\n    address1: string;\n    address2: string;\n    countryCode: string;\n    postalCode: string;\n    state: string;\n}\ninterface CardExpiryDate {\n    month: number;\n    year: number;\n}\n\n",
+            "properties": [
+                {
+                    "name": "address1",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "address2",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "countryCode",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "postalCode",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "state",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "CancelPaymentRequest",
+            "id": "interface-CancelPaymentRequest-95662c643bc102404d4c7073b2e0d298",
+            "file": "src/app/container-components/cancel-payment/cancel-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface CancelPaymentRequest {\n    cancelLink: string;\n}\n\n",
+            "properties": [
+                {
+                    "name": "cancelLink",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "CancelPaymentResponse",
+            "id": "interface-CancelPaymentResponse-dd6adaa2c424c5a7899b3e1508f2c34c",
+            "file": "src/app/container-components/cancel-payment/cancel-payment.response.ts",
+            "type": "interface",
+            "sourceCode": "export interface CancelPaymentResponse {\n    _links: _links;\n}\ninterface _links {\n    'payments:events': {\n        href: string;\n    };\n    curies: CuriesItem[];\n}\ninterface CuriesItem {\n    name: string;\n    href: string;\n    templated: boolean;\n}\n\n",
+            "properties": [
+                {
+                    "name": "_links",
+                    "type": "_links",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "CardExpiryDate",
+            "id": "interface-CardExpiryDate-1de8ed506217f933bd47854f3e99cf29",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentRequest {\n    transactionReference: string;\n    instruction: Instruction;\n}\ninterface Instruction {\n    description: string;\n    value: Value;\n    paymentInstrument: PaymentInstrument;\n}\ninterface Value {\n    currency: string;\n    amount: number;\n}\ninterface PaymentInstrument {\n    cvc: string;\n    type: string;\n    cardNumber: string;\n    cardHolderName: string;\n    billingAddress?: BillingAddress;\n    cardExpiryDate: CardExpiryDate;\n}\ninterface BillingAddress {\n    address1: string;\n    address2: string;\n    countryCode: string;\n    postalCode: string;\n    state: string;\n}\ninterface CardExpiryDate {\n    month: number;\n    year: number;\n}\n\n",
+            "properties": [
+                {
+                    "name": "month",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "year",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "CuriesItem",
+            "id": "interface-CuriesItem-28241d42fda26f9d6151f754f66526aa",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.response.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentResponse {\n    outcome: string;\n    _links: _links;\n}\ninterface _links {\n    'payments:cancel': {\n        href: string;\n    };\n    'payments:settle': {\n        href: string;\n    };\n    'payments:partialSettle': {\n        href: string;\n    };\n    'payments:events': {\n        href: string;\n    };\n    curies: CuriesItem[];\n}\ninterface CuriesItem {\n    name: string;\n    href: string;\n    templated: boolean;\n}\n\n",
+            "properties": [
+                {
+                    "name": "href",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "templated",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "CuriesItem",
+            "id": "interface-CuriesItem-dd6adaa2c424c5a7899b3e1508f2c34c",
+            "file": "src/app/container-components/cancel-payment/cancel-payment.response.ts",
+            "type": "interface",
+            "sourceCode": "export interface CancelPaymentResponse {\n    _links: _links;\n}\ninterface _links {\n    'payments:events': {\n        href: string;\n    };\n    curies: CuriesItem[];\n}\ninterface CuriesItem {\n    name: string;\n    href: string;\n    templated: boolean;\n}\n\n",
+            "properties": [
+                {
+                    "name": "href",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "templated",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Instruction",
+            "id": "interface-Instruction-1de8ed506217f933bd47854f3e99cf29",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentRequest {\n    transactionReference: string;\n    instruction: Instruction;\n}\ninterface Instruction {\n    description: string;\n    value: Value;\n    paymentInstrument: PaymentInstrument;\n}\ninterface Value {\n    currency: string;\n    amount: number;\n}\ninterface PaymentInstrument {\n    cvc: string;\n    type: string;\n    cardNumber: string;\n    cardHolderName: string;\n    billingAddress?: BillingAddress;\n    cardExpiryDate: CardExpiryDate;\n}\ninterface BillingAddress {\n    address1: string;\n    address2: string;\n    countryCode: string;\n    postalCode: string;\n    state: string;\n}\ninterface CardExpiryDate {\n    month: number;\n    year: number;\n}\n\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "paymentInstrument",
+                    "type": "PaymentInstrument",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "value",
+                    "type": "Value",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "PaymentInstrument",
+            "id": "interface-PaymentInstrument-1de8ed506217f933bd47854f3e99cf29",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentRequest {\n    transactionReference: string;\n    instruction: Instruction;\n}\ninterface Instruction {\n    description: string;\n    value: Value;\n    paymentInstrument: PaymentInstrument;\n}\ninterface Value {\n    currency: string;\n    amount: number;\n}\ninterface PaymentInstrument {\n    cvc: string;\n    type: string;\n    cardNumber: string;\n    cardHolderName: string;\n    billingAddress?: BillingAddress;\n    cardExpiryDate: CardExpiryDate;\n}\ninterface BillingAddress {\n    address1: string;\n    address2: string;\n    countryCode: string;\n    postalCode: string;\n    state: string;\n}\ninterface CardExpiryDate {\n    month: number;\n    year: number;\n}\n\n",
+            "properties": [
+                {
+                    "name": "billingAddress",
+                    "type": "BillingAddress",
+                    "optional": true,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "cardExpiryDate",
+                    "type": "CardExpiryDate",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "cardHolderName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "cardNumber",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "cvc",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "type",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Product",
+            "id": "interface-Product-df4ebd328e32a2ddcfd2318f3d205046",
+            "file": "src/app/shared-components/product/product.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\n\ninterface Product {\n  description: string;\n  value: Value;\n}\n\ninterface Value {\n  currency: string;\n  amount: number;\n}\n\n@Component({\n  selector: 'worldpay-product',\n  templateUrl: './product.component.html',\n  styleUrls: ['./product.component.scss']\n})\nexport class ProductComponent implements OnInit {\n\n  constructor() { }\n\n  @Input() product: Product;\n\n  ngOnInit() {\n  }\n\n}\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "value",
+                    "type": "Value",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "State",
+            "id": "interface-State-2f21db48cecfe186ea2d0d9094465124",
+            "file": "src/app/reducers/index.ts",
+            "type": "interface",
+            "sourceCode": "import {\n  ActionReducer,\n  ActionReducerMap,\n  createFeatureSelector,\n  createSelector,\n  MetaReducer\n} from '@ngrx/store';\nimport { environment } from '../../environments/environment';\n\nexport interface State {\n\n}\n\nexport const reducers: ActionReducerMap<State> = {\n\n};\n\n\nexport const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        },
+        {
+            "name": "State",
+            "id": "interface-State-35fa9ff2cc8eb72a6f202f8469df610b",
+            "file": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+            "type": "interface",
+            "sourceCode": "import { AuthorizePaymentResponse } from '../authorize-payment.response';\nimport { Action } from '@ngrx/store';\nimport { AuthorizePaymentActions, AuthorizePaymentActionTypes } from '../actions/authorize-payment.actions';\n\nexport interface State {\n  data?: AuthorizePaymentResponse;\n  loading: boolean;\n  error: Error;\n}\n\nexport const initialState: State = {\n  data: null,\n  loading: false,\n  error: null\n};\n\nexport function reducer(state = initialState, action: AuthorizePaymentActions): State {\n  switch (action.type) {\n\n    case AuthorizePaymentActionTypes.LoadAuthorizePayment:\n    return {\n      ...state,\n      loading: true,\n      error: null\n    };\n\n    case AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess:\n      return {\n        ...state,\n        data: action.payload,\n        loading: false,\n        error: null\n      };\n\n    case AuthorizePaymentActionTypes.LoadAuthorizePaymentFail:\n    return {\n      ...state,\n      loading: false,\n      error: action.error\n    };\n\n    default:\n      return state;\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "type": "AuthorizePaymentResponse",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "error",
+                    "type": "Error",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "loading",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "State",
+            "id": "interface-State-07f2de48a95d085e0d8e4b6b7de68423",
+            "file": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+            "type": "interface",
+            "sourceCode": "import { CancelPaymentResponse } from '../cancel-payment.response';\nimport { Action } from '@ngrx/store';\nimport { CancelPaymentActions, CancelPaymentActionTypes } from '../actions/cancel-payment.actions';\n\nexport interface State {\n  data?: CancelPaymentResponse;\n  loading: boolean;\n  error: Error;\n}\n\nexport const initialState: State = {\n  data: null,\n  loading: false,\n  error: null\n};\n\nexport function reducer(state = initialState, action: CancelPaymentActions): State {\n  switch (action.type) {\n\n    case CancelPaymentActionTypes.LoadCancelPayment:\n    return {\n      ...state,\n      loading: true,\n      error: null\n    };\n\n    case CancelPaymentActionTypes.LoadCancelPaymentSuccess:\n      return {\n        ...state,\n        data: action.payload,\n        loading: false,\n        error: null\n      };\n\n    case CancelPaymentActionTypes.LoadCancelPaymentFail:\n    return {\n      ...state,\n      loading: false,\n      error: action.error\n    };\n\n    default:\n      return state;\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "type": "CancelPaymentResponse",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "error",
+                    "type": "Error",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "loading",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Value",
+            "id": "interface-Value-1de8ed506217f933bd47854f3e99cf29",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentRequest {\n    transactionReference: string;\n    instruction: Instruction;\n}\ninterface Instruction {\n    description: string;\n    value: Value;\n    paymentInstrument: PaymentInstrument;\n}\ninterface Value {\n    currency: string;\n    amount: number;\n}\ninterface PaymentInstrument {\n    cvc: string;\n    type: string;\n    cardNumber: string;\n    cardHolderName: string;\n    billingAddress?: BillingAddress;\n    cardExpiryDate: CardExpiryDate;\n}\ninterface BillingAddress {\n    address1: string;\n    address2: string;\n    countryCode: string;\n    postalCode: string;\n    state: string;\n}\ninterface CardExpiryDate {\n    month: number;\n    year: number;\n}\n\n",
+            "properties": [
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "currency",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Value",
+            "id": "interface-Value-df4ebd328e32a2ddcfd2318f3d205046",
+            "file": "src/app/shared-components/product/product.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\n\ninterface Product {\n  description: string;\n  value: Value;\n}\n\ninterface Value {\n  currency: string;\n  amount: number;\n}\n\n@Component({\n  selector: 'worldpay-product',\n  templateUrl: './product.component.html',\n  styleUrls: ['./product.component.scss']\n})\nexport class ProductComponent implements OnInit {\n\n  constructor() { }\n\n  @Input() product: Product;\n\n  ngOnInit() {\n  }\n\n}\n",
+            "properties": [
+                {
+                    "name": "amount",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "currency",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "_links",
+            "id": "interface-_links-28241d42fda26f9d6151f754f66526aa",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.response.ts",
+            "type": "interface",
+            "sourceCode": "export interface AuthorizePaymentResponse {\n    outcome: string;\n    _links: _links;\n}\ninterface _links {\n    'payments:cancel': {\n        href: string;\n    };\n    'payments:settle': {\n        href: string;\n    };\n    'payments:partialSettle': {\n        href: string;\n    };\n    'payments:events': {\n        href: string;\n    };\n    curies: CuriesItem[];\n}\ninterface CuriesItem {\n    name: string;\n    href: string;\n    templated: boolean;\n}\n\n",
+            "properties": [
+                {
+                    "name": "curies",
+                    "type": "CuriesItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "payments:cancel",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "payments:events",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "payments:partialSettle",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "payments:settle",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "_links",
+            "id": "interface-_links-dd6adaa2c424c5a7899b3e1508f2c34c",
+            "file": "src/app/container-components/cancel-payment/cancel-payment.response.ts",
+            "type": "interface",
+            "sourceCode": "export interface CancelPaymentResponse {\n    _links: _links;\n}\ninterface _links {\n    'payments:events': {\n        href: string;\n    };\n    curies: CuriesItem[];\n}\ninterface CuriesItem {\n    name: string;\n    href: string;\n    templated: boolean;\n}\n\n",
+            "properties": [
+                {
+                    "name": "curies",
+                    "type": "CuriesItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "payments:events",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "AppEffects",
+            "id": "injectable-AppEffects-208f35169249e79965e4a34cbf75d374",
+            "file": "src/app/app.effects.ts",
+            "properties": [],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Actions, Effect } from '@ngrx/effects';\n\n\n@Injectable()\nexport class AppEffects {\n\n  constructor(private actions$: Actions) {}\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions"
+                    }
+                ],
+                "line": 6,
+                "jsdoctags": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "AuthorizePaymentEffects",
+            "id": "injectable-AuthorizePaymentEffects-1258d38a9f52126fe46746cd3f91d75f",
+            "file": "src/app/container-components/authorize-payment/effects/authorize-payment.effects.ts",
+            "properties": [
+                {
+                    "name": "loadAuthorizePayment$",
+                    "defaultValue": "this.actions$.pipe(\n    ofType(AuthorizePaymentActionTypes.LoadAuthorizePayment),\n    mergeMap((action: LoadAuthorizePayment) =>\n      this.authorizePaymentService.loadAuthorizePayment(action.request).pipe(\n        // If successful, dispatch success action with result\n        map(data => ({ type: AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess, payload: data })),\n        // If request fails, dispatch failed action\n        catchError((error: HttpErrorResponse) => of({ type: AuthorizePaymentActionTypes.LoadAuthorizePaymentFail, error: error }))\n      )\n    ))",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "decorators": [
+                        {
+                            "name": "Effect"
+                        }
+                    ]
+                }
+            ],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { AuthorizePaymentService } from '../services/authorize-payment.service';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { mergeMap, map, catchError } from 'rxjs/operators';\nimport { Injectable } from '@angular/core';\nimport { Actions, Effect, ofType } from '@ngrx/effects';\nimport { AuthorizePaymentActionTypes, LoadAuthorizePayment } from '../actions/authorize-payment.actions';\nimport { of } from 'rxjs';\n\n@Injectable()\nexport class AuthorizePaymentEffects {\n\n  @Effect()\n  loadAuthorizePayment$ = this.actions$.pipe(\n    ofType(AuthorizePaymentActionTypes.LoadAuthorizePayment),\n    mergeMap((action: LoadAuthorizePayment) =>\n      this.authorizePaymentService.loadAuthorizePayment(action.request).pipe(\n        // If successful, dispatch success action with result\n        map(data => ({ type: AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess, payload: data })),\n        // If request fails, dispatch failed action\n        catchError((error: HttpErrorResponse) => of({ type: AuthorizePaymentActionTypes.LoadAuthorizePaymentFail, error: error }))\n      )\n    ));\n\n  constructor(private actions$: Actions, private authorizePaymentService: AuthorizePaymentService) {}\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions"
+                    },
+                    {
+                        "name": "authorizePaymentService",
+                        "type": "AuthorizePaymentService"
+                    }
+                ],
+                "line": 22,
+                "jsdoctags": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "authorizePaymentService",
+                        "type": "AuthorizePaymentService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "AuthorizePaymentService",
+            "id": "injectable-AuthorizePaymentService-aa9c832d4e6a9b83af928201080e7ab8",
+            "file": "src/app/container-components/authorize-payment/services/authorize-payment.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "loadAuthorizePayment",
+                    "args": [
+                        {
+                            "name": "request",
+                            "type": "AuthorizePaymentRequest"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 11,
+                    "jsdoctags": [
+                        {
+                            "name": "request",
+                            "type": "AuthorizePaymentRequest",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient, HttpParams } from '@angular/common/http';\nimport { environment } from '../../../../environments/environment';\nimport { Observable } from 'rxjs';\nimport { AuthorizePaymentRequest } from '../authorize-payment.request';\n\n@Injectable()\nexport class AuthorizePaymentService {\n  constructor(private http: HttpClient) {}\n\n  loadAuthorizePayment(request: AuthorizePaymentRequest): Observable<any> {\n\nreturn this.http.post(environment.baseUrl + 'payments', { request });  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "CancelPaymentEffects",
+            "id": "injectable-CancelPaymentEffects-7dd9228dc576dc5e488a8ca56d23f8bc",
+            "file": "src/app/container-components/cancel-payment/effects/cancel-payment.effects.ts",
+            "properties": [
+                {
+                    "name": "loadCancelPayment$",
+                    "defaultValue": "this.actions$.pipe(\n    ofType(CancelPaymentActionTypes.LoadCancelPayment),\n    mergeMap((action: LoadCancelPayment) =>\n      this.cancelPaymentService.loadCancelPayment(action.request).pipe(\n        // If successful, dispatch success action with result\n        map(data => ({ type: CancelPaymentActionTypes.LoadCancelPaymentSuccess, payload: data })),\n        // If request fails, dispatch failed action\n        catchError((error: HttpErrorResponse) => of({ type: CancelPaymentActionTypes.LoadCancelPaymentFail, error: error }))\n      )\n    ))",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "decorators": [
+                        {
+                            "name": "Effect"
+                        }
+                    ]
+                }
+            ],
+            "methods": [],
+            "description": "",
+            "sourceCode": "import { CancelPaymentService } from '../services/cancel-payment.service';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { mergeMap, map, catchError } from 'rxjs/operators';\nimport { Injectable } from '@angular/core';\nimport { Actions, Effect, ofType } from '@ngrx/effects';\nimport { CancelPaymentActionTypes, LoadCancelPayment } from '../actions/cancel-payment.actions';\nimport { of } from 'rxjs';\n\n@Injectable()\nexport class CancelPaymentEffects {\n\n  @Effect()\n  loadCancelPayment$ = this.actions$.pipe(\n    ofType(CancelPaymentActionTypes.LoadCancelPayment),\n    mergeMap((action: LoadCancelPayment) =>\n      this.cancelPaymentService.loadCancelPayment(action.request).pipe(\n        // If successful, dispatch success action with result\n        map(data => ({ type: CancelPaymentActionTypes.LoadCancelPaymentSuccess, payload: data })),\n        // If request fails, dispatch failed action\n        catchError((error: HttpErrorResponse) => of({ type: CancelPaymentActionTypes.LoadCancelPaymentFail, error: error }))\n      )\n    ));\n\n  constructor(private actions$: Actions, private cancelPaymentService: CancelPaymentService) {}\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions"
+                    },
+                    {
+                        "name": "cancelPaymentService",
+                        "type": "CancelPaymentService"
+                    }
+                ],
+                "line": 22,
+                "jsdoctags": [
+                    {
+                        "name": "actions$",
+                        "type": "Actions",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "cancelPaymentService",
+                        "type": "CancelPaymentService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "CancelPaymentService",
+            "id": "injectable-CancelPaymentService-67323b5d3030c3ae4340de724d3ceb2b",
+            "file": "src/app/container-components/cancel-payment/services/cancel-payment.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "loadCancelPayment",
+                    "args": [
+                        {
+                            "name": "request",
+                            "type": "CancelPaymentRequest"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 10,
+                    "jsdoctags": [
+                        {
+                            "name": "request",
+                            "type": "CancelPaymentRequest",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { CancelPaymentRequest } from '../cancel-payment.request';\n\n@Injectable()\nexport class CancelPaymentService {\n  constructor(private http: HttpClient) {}\n\n  loadCancelPayment(request: CancelPaymentRequest): Observable<any> {\n\nreturn this.http.post(request.cancelLink, {});  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "classes": [
+        {
+            "name": "LoadAuthorizePayment",
+            "id": "class-LoadAuthorizePayment-4d8e3beefabf43d359424b3b973c5b8c",
+            "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+            "type": "class",
+            "sourceCode": "import { AuthorizePaymentResponse } from './../authorize-payment.response';\nimport { Action } from '@ngrx/store';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { AuthorizePaymentRequest } from '../authorize-payment.request';\n\nexport enum AuthorizePaymentActionTypes {\n  LoadAuthorizePayment = 'Load AuthorizePayment',\n  LoadAuthorizePaymentSuccess = 'Load AuthorizePayment Success',\n  LoadAuthorizePaymentFail = 'Load AuthorizePayment Fail',\n}\n\nexport class LoadAuthorizePayment implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePayment;\n  constructor(public request: AuthorizePaymentRequest) { }\n}\n\nexport class LoadAuthorizePaymentSuccess implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess;\n  constructor(public payload: AuthorizePaymentResponse) { }\n}\n\nexport class LoadAuthorizePaymentFail implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePaymentFail;\n  constructor(public error: HttpErrorResponse) { }\n}\n\nexport type AuthorizePaymentActions = LoadAuthorizePayment | LoadAuthorizePaymentSuccess | LoadAuthorizePaymentFail;\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "request",
+                        "type": "AuthorizePaymentRequest"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "request",
+                        "type": "AuthorizePaymentRequest",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "request",
+                    "type": "AuthorizePaymentRequest",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "AuthorizePaymentActionTypes.LoadAuthorizePayment",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "implements": [
+                "Action"
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "LoadAuthorizePaymentFail",
+            "id": "class-LoadAuthorizePaymentFail-4d8e3beefabf43d359424b3b973c5b8c",
+            "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+            "type": "class",
+            "sourceCode": "import { AuthorizePaymentResponse } from './../authorize-payment.response';\nimport { Action } from '@ngrx/store';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { AuthorizePaymentRequest } from '../authorize-payment.request';\n\nexport enum AuthorizePaymentActionTypes {\n  LoadAuthorizePayment = 'Load AuthorizePayment',\n  LoadAuthorizePaymentSuccess = 'Load AuthorizePayment Success',\n  LoadAuthorizePaymentFail = 'Load AuthorizePayment Fail',\n}\n\nexport class LoadAuthorizePayment implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePayment;\n  constructor(public request: AuthorizePaymentRequest) { }\n}\n\nexport class LoadAuthorizePaymentSuccess implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess;\n  constructor(public payload: AuthorizePaymentResponse) { }\n}\n\nexport class LoadAuthorizePaymentFail implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePaymentFail;\n  constructor(public error: HttpErrorResponse) { }\n}\n\nexport type AuthorizePaymentActions = LoadAuthorizePayment | LoadAuthorizePaymentSuccess | LoadAuthorizePaymentFail;\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "error",
+                        "type": "HttpErrorResponse"
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "error",
+                        "type": "HttpErrorResponse",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "error",
+                    "type": "HttpErrorResponse",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "AuthorizePaymentActionTypes.LoadAuthorizePaymentFail",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "implements": [
+                "Action"
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "LoadAuthorizePaymentSuccess",
+            "id": "class-LoadAuthorizePaymentSuccess-4d8e3beefabf43d359424b3b973c5b8c",
+            "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+            "type": "class",
+            "sourceCode": "import { AuthorizePaymentResponse } from './../authorize-payment.response';\nimport { Action } from '@ngrx/store';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { AuthorizePaymentRequest } from '../authorize-payment.request';\n\nexport enum AuthorizePaymentActionTypes {\n  LoadAuthorizePayment = 'Load AuthorizePayment',\n  LoadAuthorizePaymentSuccess = 'Load AuthorizePayment Success',\n  LoadAuthorizePaymentFail = 'Load AuthorizePayment Fail',\n}\n\nexport class LoadAuthorizePayment implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePayment;\n  constructor(public request: AuthorizePaymentRequest) { }\n}\n\nexport class LoadAuthorizePaymentSuccess implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess;\n  constructor(public payload: AuthorizePaymentResponse) { }\n}\n\nexport class LoadAuthorizePaymentFail implements Action {\n  readonly type = AuthorizePaymentActionTypes.LoadAuthorizePaymentFail;\n  constructor(public error: HttpErrorResponse) { }\n}\n\nexport type AuthorizePaymentActions = LoadAuthorizePayment | LoadAuthorizePaymentSuccess | LoadAuthorizePaymentFail;\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "AuthorizePaymentResponse"
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "AuthorizePaymentResponse",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "AuthorizePaymentResponse",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "AuthorizePaymentActionTypes.LoadAuthorizePaymentSuccess",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "implements": [
+                "Action"
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "LoadCancelPayment",
+            "id": "class-LoadCancelPayment-62346e2e129be3ae46b2ad4fe08890fb",
+            "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+            "type": "class",
+            "sourceCode": "import { CancelPaymentResponse } from './../cancel-payment.response';\nimport { Action } from '@ngrx/store';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { CancelPaymentRequest } from '../cancel-payment.request';\n\nexport enum CancelPaymentActionTypes {\n  LoadCancelPayment = 'Load CancelPayment',\n  LoadCancelPaymentSuccess = 'Load CancelPayment Success',\n  LoadCancelPaymentFail = 'Load CancelPayment Fail',\n}\n\nexport class LoadCancelPayment implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPayment;\n  constructor(public request: CancelPaymentRequest) { }\n}\n\nexport class LoadCancelPaymentSuccess implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPaymentSuccess;\n  constructor(public payload: CancelPaymentResponse) { }\n}\n\nexport class LoadCancelPaymentFail implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPaymentFail;\n  constructor(public error: HttpErrorResponse) { }\n}\n\nexport type CancelPaymentActions = LoadCancelPayment | LoadCancelPaymentSuccess | LoadCancelPaymentFail;\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "request",
+                        "type": "CancelPaymentRequest"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "request",
+                        "type": "CancelPaymentRequest",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "request",
+                    "type": "CancelPaymentRequest",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "CancelPaymentActionTypes.LoadCancelPayment",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "implements": [
+                "Action"
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "LoadCancelPaymentFail",
+            "id": "class-LoadCancelPaymentFail-62346e2e129be3ae46b2ad4fe08890fb",
+            "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+            "type": "class",
+            "sourceCode": "import { CancelPaymentResponse } from './../cancel-payment.response';\nimport { Action } from '@ngrx/store';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { CancelPaymentRequest } from '../cancel-payment.request';\n\nexport enum CancelPaymentActionTypes {\n  LoadCancelPayment = 'Load CancelPayment',\n  LoadCancelPaymentSuccess = 'Load CancelPayment Success',\n  LoadCancelPaymentFail = 'Load CancelPayment Fail',\n}\n\nexport class LoadCancelPayment implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPayment;\n  constructor(public request: CancelPaymentRequest) { }\n}\n\nexport class LoadCancelPaymentSuccess implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPaymentSuccess;\n  constructor(public payload: CancelPaymentResponse) { }\n}\n\nexport class LoadCancelPaymentFail implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPaymentFail;\n  constructor(public error: HttpErrorResponse) { }\n}\n\nexport type CancelPaymentActions = LoadCancelPayment | LoadCancelPaymentSuccess | LoadCancelPaymentFail;\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "error",
+                        "type": "HttpErrorResponse"
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "error",
+                        "type": "HttpErrorResponse",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "error",
+                    "type": "HttpErrorResponse",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "CancelPaymentActionTypes.LoadCancelPaymentFail",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "implements": [
+                "Action"
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "LoadCancelPaymentSuccess",
+            "id": "class-LoadCancelPaymentSuccess-62346e2e129be3ae46b2ad4fe08890fb",
+            "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+            "type": "class",
+            "sourceCode": "import { CancelPaymentResponse } from './../cancel-payment.response';\nimport { Action } from '@ngrx/store';\nimport { HttpErrorResponse } from '@angular/common/http';\nimport { CancelPaymentRequest } from '../cancel-payment.request';\n\nexport enum CancelPaymentActionTypes {\n  LoadCancelPayment = 'Load CancelPayment',\n  LoadCancelPaymentSuccess = 'Load CancelPayment Success',\n  LoadCancelPaymentFail = 'Load CancelPayment Fail',\n}\n\nexport class LoadCancelPayment implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPayment;\n  constructor(public request: CancelPaymentRequest) { }\n}\n\nexport class LoadCancelPaymentSuccess implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPaymentSuccess;\n  constructor(public payload: CancelPaymentResponse) { }\n}\n\nexport class LoadCancelPaymentFail implements Action {\n  readonly type = CancelPaymentActionTypes.LoadCancelPaymentFail;\n  constructor(public error: HttpErrorResponse) { }\n}\n\nexport type CancelPaymentActions = LoadCancelPayment | LoadCancelPaymentSuccess | LoadCancelPaymentFail;\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "CancelPaymentResponse"
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "CancelPaymentResponse",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "CancelPaymentResponse",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "CancelPaymentActionTypes.LoadCancelPaymentSuccess",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "implements": [
+                "Action"
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-27189d371847309b9c1cf816fdb4d019",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "worldpay-root",
+            "styleUrls": [
+                "app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'worldpay-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n}\n",
+            "templateData": "<router-outlet></router-outlet>\n"
+        },
+        {
+            "name": "AuthorizePaymentComponent",
+            "id": "component-AuthorizePaymentComponent-f287dd65ba066f3b790083d50d4e82eb",
+            "file": "src/app/container-components/authorize-payment/authorize-payment.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "worldpay-authorize-payment",
+            "styleUrls": [
+                "authorize-payment.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./authorize-payment.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "authorizePayment$",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "authorizePaymentRequest",
+                    "type": "AuthorizePaymentRequest",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "outcomeStatuses",
+                    "defaultValue": "OutcomeStatuses",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "product",
+                    "defaultValue": "{\n    'description': 'Wolrd Pay Manual Book',\n    'value': { 'currency': 'GBP', 'amount': 10 }\n  }",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40
+                },
+                {
+                    "name": "payClicked",
+                    "args": [
+                        {
+                            "name": "paymentInstrument",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "description": "<p>When a user click the Payment button</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 968,
+                                "end": 985,
+                                "flags": 0,
+                                "escapedText": "paymentInstrument"
+                            },
+                            "type": "",
+                            "tagName": {
+                                "pos": 962,
+                                "end": 967,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The Payment Details</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "type": "component",
+            "sourceCode": "import { LoadAuthorizePayment } from './actions/authorize-payment.actions';\nimport { Component, OnInit, Output } from '@angular/core';\nimport { Store, select } from '@ngrx/store';\nimport * as fromStore from '../../reducers';\nimport { Observable } from 'rxjs';\nimport { AuthorizePaymentRequest } from './authorize-payment.request';\n\n\nenum OutcomeStatuses {\n  Authorized = 'authorized',\n}\n\n@Component({\n  selector: 'worldpay-authorize-payment',\n  templateUrl: './authorize-payment.component.html',\n  styleUrls: ['./authorize-payment.component.scss']\n})\nexport class AuthorizePaymentComponent implements OnInit {\n  authorizePayment$: Observable<any>;\n  authorizePaymentRequest: AuthorizePaymentRequest;\n  outcomeStatuses = OutcomeStatuses;\n  product = {\n    'description': 'Wolrd Pay Manual Book',\n    'value': { 'currency': 'GBP', 'amount': 10 }\n  };\n\n  constructor(private store: Store<fromStore.State>) { }\n\n  /**\n   * When a user click the Payment button\n   * @param paymentInstrument The Payment Details\n   */\n  payClicked(paymentInstrument) {\n    this.authorizePaymentRequest.instruction.paymentInstrument = paymentInstrument;\n    this.store.dispatch(new LoadAuthorizePayment(\n      this.authorizePaymentRequest\n    ));\n  }\n\n  ngOnInit() {\n    this.authorizePayment$ = this.store.pipe(select('authorize-payment'));\n\n    this.authorizePaymentRequest = {\n      'transactionReference': '12345678',\n      'instruction': {\n        ...this.product,\n        'paymentInstrument': {\n          'cvc': '', 'type': 'card/plain', 'cardNumber': '', 'cardHolderName': '',\n          'cardExpiryDate': { 'month': null, 'year': null }\n        }\n      }\n    };\n\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store<fromStore.State>"
+                    }
+                ],
+                "line": 25,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store<fromStore.State>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\n  <div class=\"product-area\">\n    <worldpay-product [product]=\"product\"></worldpay-product>\n  </div>\n  <div class=\"payment-area\">\n    <div *ngIf=\"(authorizePayment$ | async)?.data?.outcome !== outcomeStatuses.Authorized\">\n      <worldpay-payment-form *ngIf=\"(authorizePayment$ | async)?.loading === false\" (payClicked)='payClicked($event)'></worldpay-payment-form>\n      \n      <div class=\"spinner-wraper\" *ngIf=\"(authorizePayment$ | async)?.loading === true\">\n        <p>Please Wait I delay this request stub in purpose</p>\n        <mat-spinner class=\"spinner\"></mat-spinner>\n      </div>\n    </div>\n    <div *ngIf=\"(authorizePayment$ | async)?.data?.outcome === outcomeStatuses.Authorized\">\n      <worldpay-cancel-payment></worldpay-cancel-payment>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "CancelPaymentComponent",
+            "id": "component-CancelPaymentComponent-689e1633153702a0c1512ba1370663a9",
+            "file": "src/app/container-components/cancel-payment/cancel-payment.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "worldpay-cancel-payment",
+            "styleUrls": [
+                "cancel-payment.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./cancel-payment.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "authorizePayment$",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "cancelLink",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "cancelPayment$",
+                    "type": "Observable<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "cancelPaymentRequest",
+                    "type": "CancelPaymentRequest",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "cancelPayment",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "type": "component",
+            "sourceCode": "import { LoadCancelPayment } from './actions/cancel-payment.actions';\nimport { Component, OnInit } from '@angular/core';\nimport { Store, select } from '@ngrx/store';\nimport * as fromStore from '../../reducers';\nimport { Observable } from 'rxjs';\nimport { CancelPaymentRequest } from './cancel-payment.request';\n\n@Component({\n  selector: 'worldpay-cancel-payment',\n  templateUrl: './cancel-payment.component.html',\n  styleUrls: ['./cancel-payment.component.scss']\n})\nexport class CancelPaymentComponent implements OnInit {\n  cancelPayment$: Observable<any>;\n  authorizePayment$: Observable<any>;\n  cancelPaymentRequest: CancelPaymentRequest;\n  cancelLink: string;\n\n  constructor(private store: Store<fromStore.State>) { }\n\n  cancelPayment() {\n    this.cancelPaymentRequest = { 'cancelLink': this.cancelLink };\n    this.store.dispatch(new LoadCancelPayment(\n      this.cancelPaymentRequest\n    ));\n  }\n\n  ngOnInit() {\n    this.cancelPayment$ = this.store.pipe(select('cancel-payment'));\n    this.authorizePayment$ = this.store.pipe(select('authorize-payment'));\n\n    this.authorizePayment$.subscribe((authorizePayment) => {\n      if (authorizePayment &&\n        authorizePayment.data && authorizePayment.data._links['payments:cancel'] &&\n        authorizePayment.data._links['payments:cancel'].href) {\n        this.cancelLink = authorizePayment.data._links['payments:cancel'].href;\n      }\n    });\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store<fromStore.State>"
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store<fromStore.State>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div *ngIf=\"(cancelPayment$ | async)?.data?._links?.curies\">\n  <h1 class=\"cancel-title\">The payment is cancelled</h1>\n</div>\n<div *ngIf=\"(cancelPayment$ | async)?.data === null\">\n  <h1 class=\"authorized\">Authorized</h1>\n  <button (click)=\"cancelPayment()\" mat-raised-button color=\"warn\">Cancel The Payment</button>\n</div>\n"
+        },
+        {
+            "name": "PaymentFormComponent",
+            "id": "component-PaymentFormComponent-7ecf5f5afa3ca49541305efe68f5bf29",
+            "file": "src/app/shared-components/payment-form/payment-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "worldpay-payment-form",
+            "styleUrls": [
+                "payment-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./payment-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "payClicked",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 10,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "paymentInstrument",
+                    "defaultValue": "{\n    'cvc': '', 'type': 'card/plain', 'cardNumber': '', 'cardHolderName': '',\n    'cardExpiryDate': { 'month': null, 'year': null }\n  }",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23
+                },
+                {
+                    "name": "pay",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'worldpay-payment-form',\n  templateUrl: './payment-form.component.html',\n  styleUrls: ['./payment-form.component.scss']\n})\nexport class PaymentFormComponent implements OnInit {\n\n  @Output() payClicked = new EventEmitter();\n\n  paymentInstrument = {\n    'cvc': '', 'type': 'card/plain', 'cardNumber': '', 'cardHolderName': '',\n    'cardExpiryDate': { 'month': null, 'year': null }\n  };\n\n  constructor() { }\n\n  pay() {\n    this.payClicked.emit(this.paymentInstrument);\n  }\n\n  ngOnInit() {\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h1>PAYMENT</h1>\n<div>\n  <mat-form-field>\n    <input matInput placeholder=\"Card Number\" maxlength=\"16\" [(ngModel)]=\"paymentInstrument.cardNumber\">\n  </mat-form-field>\n</div>\n<div>\n  <mat-form-field>\n    <input matInput placeholder=\"Card Holder Name\" maxlength=\"20\" [(ngModel)]=\"paymentInstrument.cardHolderName\">\n  </mat-form-field>\n</div>\n<mat-form-field class=\"month-input\">\n  <input matInput placeholder=\"MM\" maxlength=\"2\" [(ngModel)]=\"paymentInstrument.cardExpiryDate.month\">\n</mat-form-field>\n<mat-form-field class=\"year-input\">\n  <input matInput placeholder=\"YYYY\" maxlength=\"4\" [(ngModel)]=\"paymentInstrument.cardExpiryDate.year\">\n</mat-form-field>\n<div>\n  <mat-form-field class=\"cvv-input\">\n    <input matInput placeholder=\"CVV\" maxlength=\"3\" [(ngModel)]=\"paymentInstrument.cvc\">\n  </mat-form-field>\n</div>\n<button (click)=\"pay()\" mat-raised-button color=\"primary\">Pay Now</button>\n"
+        },
+        {
+            "name": "ProductComponent",
+            "id": "component-ProductComponent-df4ebd328e32a2ddcfd2318f3d205046",
+            "file": "src/app/shared-components/product/product.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "worldpay-product",
+            "styleUrls": [
+                "product.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./product.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "product",
+                    "line": 22,
+                    "type": "Product"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\n\ninterface Product {\n  description: string;\n  value: Value;\n}\n\ninterface Value {\n  currency: string;\n  amount: number;\n}\n\n@Component({\n  selector: 'worldpay-product',\n  templateUrl: './product.component.html',\n  styleUrls: ['./product.component.scss']\n})\nexport class ProductComponent implements OnInit {\n\n  constructor() { }\n\n  @Input() product: Product;\n\n  ngOnInit() {\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 18
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-card class=\"product\">\n  <mat-card-header>\n    <mat-card-title>{{ product.description }}</mat-card-title>\n    <mat-card-subtitle>Buy this book with 20% off</mat-card-subtitle>\n  </mat-card-header>\n  <img mat-card-image src=\"https://static1.squarespace.com/static/5177f3c9e4b054c7ac38e2ba/5767f45f893fc027263fc5d6/5767f4a73e00be24e55098fd/1466430648221/Website_Portfolio_Design_Worldpay5.jpg?format=1000w\"\n    alt=\"Book\">\n  <mat-card-content>\n    <p>\n      This is an example book product that you can buy now.\n      Don't worry your card details will not be stored in our side because of PCI complience we going to get a\n      token\n      instend and then you can authorize the payment.\n    </p>\n  </mat-card-content>\n  <span>Price: {{ product.value.amount | currency:'GBP' }}</span>\n</mat-card>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "!"
+                        },
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "AuthorizePaymentModule"
+                        },
+                        {
+                            "name": "CancelPaymentModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AuthorizePaymentModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "AuthorizePaymentService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AuthorizePaymentComponent"
+                        },
+                        {
+                            "name": "PaymentFormComponent"
+                        },
+                        {
+                            "name": "ProductComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CancelPaymentModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CancelPaymentModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "CancelPaymentService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CancelPaymentComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CancelPaymentComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "componentFolderName",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                "type": "string",
+                "defaultValue": "'payment-form'"
+            },
+            {
+                "name": "componentFolderName",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared-components/product/product.stories.ts",
+                "type": "string",
+                "defaultValue": "'product'"
+            },
+            {
+                "name": "description",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared-components/product/product.stories.ts",
+                "type": "string",
+                "defaultValue": "'This is the description sample.'"
+            },
+            {
+                "name": "description",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                "type": "string",
+                "defaultValue": "'This is the description sample.'"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  baseUrl: 'http://localhost:7777/portalserver/services/rest/api/',\n  loginUrl: 'http://localhost:7777/portalserver/j_collections_security_check'\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.fe-mocks.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  baseUrl: 'http://localhost:3003/',\n  loginUrl: 'http://localhost:3003/j_collections_security_check'\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n  baseUrl: '/portalserver/services/rest/api/',\n  loginUrl: '/portalserver/j_collections_security_check'\n}"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                "type": "State",
+                "defaultValue": "{\n  data: null,\n  loading: false,\n  error: null\n}"
+            },
+            {
+                "name": "initialState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                "type": "State",
+                "defaultValue": "{\n  data: null,\n  loading: false,\n  error: null\n}"
+            },
+            {
+                "name": "metaReducers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/reducers/index.ts",
+                "type": "MetaReducer[]",
+                "defaultValue": "!environment.production ? [] : []"
+            },
+            {
+                "name": "reducers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/reducers/index.ts",
+                "type": "ActionReducerMap<State>",
+                "defaultValue": "{\n\n}"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                "type": "",
+                "defaultValue": "`<metro-payment-form></metro-payment-form>`"
+            },
+            {
+                "name": "template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared-components/product/product.stories.ts",
+                "type": "",
+                "defaultValue": "`<metro-product></metro-product>`"
+            }
+        ],
+        "functions": [
+            {
+                "name": "reducer",
+                "file": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "state",
+                        "type": ""
+                    },
+                    {
+                        "name": "action"
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "state",
+                        "type": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "action",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "reducer",
+                "file": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "state",
+                        "type": ""
+                    },
+                    {
+                        "name": "action"
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "state",
+                        "type": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "action",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "AuthorizePaymentActions",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "LoadAuthorizePayment | LoadAuthorizePaymentSuccess | LoadAuthorizePaymentFail",
+                "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+                "description": "",
+                "kind": 168
+            },
+            {
+                "name": "CancelPaymentActions",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "LoadCancelPayment | LoadCancelPaymentSuccess | LoadCancelPaymentFail",
+                "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+                "description": "",
+                "kind": 168
+            }
+        ],
+        "enumerations": [
+            {
+                "name": "AuthorizePaymentActionTypes",
+                "childs": [
+                    {
+                        "name": "LoadAuthorizePayment",
+                        "value": "Load AuthorizePayment"
+                    },
+                    {
+                        "name": "LoadAuthorizePaymentSuccess",
+                        "value": "Load AuthorizePayment Success"
+                    },
+                    {
+                        "name": "LoadAuthorizePaymentFail",
+                        "value": "Load AuthorizePayment Fail"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts"
+            },
+            {
+                "name": "CancelPaymentActionTypes",
+                "childs": [
+                    {
+                        "name": "LoadCancelPayment",
+                        "value": "Load CancelPayment"
+                    },
+                    {
+                        "name": "LoadCancelPaymentSuccess",
+                        "value": "Load CancelPayment Success"
+                    },
+                    {
+                        "name": "LoadCancelPaymentFail",
+                        "value": "Load CancelPayment Fail"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts"
+            },
+            {
+                "name": "OutcomeStatuses",
+                "childs": [
+                    {
+                        "name": "Authorized",
+                        "value": "authorized"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "description": "",
+                "file": "src/app/container-components/authorize-payment/authorize-payment.component.ts"
+            }
+        ],
+        "groupedVariables": {
+            "src/app/shared-components/payment-form/payment-form.stories.ts": [
+                {
+                    "name": "componentFolderName",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'payment-form'"
+                },
+                {
+                    "name": "description",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'This is the description sample.'"
+                },
+                {
+                    "name": "template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                    "type": "",
+                    "defaultValue": "`<metro-payment-form></metro-payment-form>`"
+                }
+            ],
+            "src/app/shared-components/product/product.stories.ts": [
+                {
+                    "name": "componentFolderName",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared-components/product/product.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'product'"
+                },
+                {
+                    "name": "description",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared-components/product/product.stories.ts",
+                    "type": "string",
+                    "defaultValue": "'This is the description sample.'"
+                },
+                {
+                    "name": "template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared-components/product/product.stories.ts",
+                    "type": "",
+                    "defaultValue": "`<metro-product></metro-product>`"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  baseUrl: 'http://localhost:7777/portalserver/services/rest/api/',\n  loginUrl: 'http://localhost:7777/portalserver/j_collections_security_check'\n}"
+                }
+            ],
+            "src/environments/environment.fe-mocks.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.fe-mocks.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  baseUrl: 'http://localhost:3003/',\n  loginUrl: 'http://localhost:3003/j_collections_security_check'\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  baseUrl: '/portalserver/services/rest/api/',\n  loginUrl: '/portalserver/j_collections_security_check'\n}"
+                }
+            ],
+            "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts": [
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                    "type": "State",
+                    "defaultValue": "{\n  data: null,\n  loading: false,\n  error: null\n}"
+                }
+            ],
+            "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts": [
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                    "type": "State",
+                    "defaultValue": "{\n  data: null,\n  loading: false,\n  error: null\n}"
+                }
+            ],
+            "src/app/reducers/index.ts": [
+                {
+                    "name": "metaReducers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/reducers/index.ts",
+                    "type": "MetaReducer[]",
+                    "defaultValue": "!environment.production ? [] : []"
+                },
+                {
+                    "name": "reducers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/reducers/index.ts",
+                    "type": "ActionReducerMap<State>",
+                    "defaultValue": "{\n\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts": [
+                {
+                    "name": "reducer",
+                    "file": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": ""
+                        },
+                        {
+                            "name": "action"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "action",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts": [
+                {
+                    "name": "reducer",
+                    "file": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": ""
+                        },
+                        {
+                            "name": "action"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "action",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {
+            "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts": [
+                {
+                    "name": "AuthorizePaymentActionTypes",
+                    "childs": [
+                        {
+                            "name": "LoadAuthorizePayment",
+                            "value": "Load AuthorizePayment"
+                        },
+                        {
+                            "name": "LoadAuthorizePaymentSuccess",
+                            "value": "Load AuthorizePayment Success"
+                        },
+                        {
+                            "name": "LoadAuthorizePaymentFail",
+                            "value": "Load AuthorizePayment Fail"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts"
+                }
+            ],
+            "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts": [
+                {
+                    "name": "CancelPaymentActionTypes",
+                    "childs": [
+                        {
+                            "name": "LoadCancelPayment",
+                            "value": "Load CancelPayment"
+                        },
+                        {
+                            "name": "LoadCancelPaymentSuccess",
+                            "value": "Load CancelPayment Success"
+                        },
+                        {
+                            "name": "LoadCancelPaymentFail",
+                            "value": "Load CancelPayment Fail"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts"
+                }
+            ],
+            "src/app/container-components/authorize-payment/authorize-payment.component.ts": [
+                {
+                    "name": "OutcomeStatuses",
+                    "childs": [
+                        {
+                            "name": "Authorized",
+                            "value": "authorized"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "description": "",
+                    "file": "src/app/container-components/authorize-payment/authorize-payment.component.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {
+            "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts": [
+                {
+                    "name": "AuthorizePaymentActions",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "LoadAuthorizePayment | LoadAuthorizePaymentSuccess | LoadAuthorizePaymentFail",
+                    "file": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ],
+            "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts": [
+                {
+                    "name": "CancelPaymentActions",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "LoadCancelPayment | LoadCancelPaymentSuccess | LoadCancelPaymentFail",
+                    "file": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "component": "AuthorizePaymentComponent"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.effects.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AppEffects",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LoadAuthorizePayment",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LoadAuthorizePaymentFail",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/actions/authorize-payment.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LoadAuthorizePaymentSuccess",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AuthorizePaymentComponent",
+                "coveragePercent": 12,
+                "coverageCount": "1/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AuthorizePaymentRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BillingAddress",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CardExpiryDate",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Instruction",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PaymentInstrument",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Value",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.response.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "AuthorizePaymentResponse",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.response.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CuriesItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/authorize-payment.response.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "_links",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/effects/authorize-payment.effects.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AuthorizePaymentEffects",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "State",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "reducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/reducers/authorize-payment.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/authorize-payment/services/authorize-payment.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AuthorizePaymentService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LoadCancelPayment",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LoadCancelPaymentFail",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/actions/cancel-payment.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LoadCancelPaymentSuccess",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/cancel-payment.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CancelPaymentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/cancel-payment.request.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CancelPaymentRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/cancel-payment.response.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CancelPaymentResponse",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/cancel-payment.response.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CuriesItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/cancel-payment.response.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "_links",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/effects/cancel-payment.effects.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CancelPaymentEffects",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "State",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "reducer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/reducers/cancel-payment.reducer.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "initialState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/container-components/cancel-payment/services/cancel-payment.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CancelPaymentService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/reducers/index.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "State",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/reducers/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "metaReducers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/reducers/index.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "reducers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/payment-form/payment-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PaymentFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "componentFolderName",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "description",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/payment-form/payment-form.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/product/product.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/product/product.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Product",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/product/product.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Value",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/product/product.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "componentFolderName",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/product/product.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "description",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared-components/product/product.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.fe-mocks.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

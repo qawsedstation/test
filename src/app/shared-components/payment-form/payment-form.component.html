@@ -1,0 +1,23 @@
+<h1>PAYMENT</h1>
+<div>
+  <mat-form-field>
+    <input class="card-number" matInput placeholder="Card Number" maxlength="16" [(ngModel)]="paymentInstrument.cardNumber">
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field>
+    <input class="card-holder"  matInput placeholder="Card Holder Name" maxlength="20" [(ngModel)]="paymentInstrument.cardHolderName">
+  </mat-form-field>
+</div>
+<mat-form-field class="month-input">
+  <input class="month"  matInput placeholder="MM" maxlength="2" [(ngModel)]="paymentInstrument.cardExpiryDate.month">
+</mat-form-field>
+<mat-form-field class="year-input">
+  <input class="year"  matInput placeholder="YYYY" maxlength="4" [(ngModel)]="paymentInstrument.cardExpiryDate.year">
+</mat-form-field>
+<div>
+  <mat-form-field class="cvv-input">
+    <input class="cvv"  matInput placeholder="CVV" maxlength="3" [(ngModel)]="paymentInstrument.cvc">
+  </mat-form-field>
+</div>
+<button class="pay-button" (click)="pay()" mat-raised-button color="primary">Pay Now</button>

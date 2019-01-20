@@ -1,0 +1,7 @@
+<div *ngIf="cancelPayment?.data?._links?.curies">
+  <h1 class="cancel-title">The payment is cancelled</h1>
+</div>
+<div *ngIf="cancelPayment?.data === null">
+  <h1 class="authorized">Authorized</h1>
+  <button class="cancel-payment-button" (click)="cancelPaymentButton()" mat-raised-button color="warn">Cancel The Payment</button>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="product-area">
+    <worldpay-product [product]="product"></worldpay-product>
+  </div>
+  <div class="payment-area">
+    <div *ngIf="authorizePayment?.data?.outcome !== outcomeStatuses.Authorized">
+      <worldpay-payment-form *ngIf="authorizePayment?.loading === false" (payClicked)='payClicked($event)'></worldpay-payment-form>
+      <div class="spinner-wraper" *ngIf="authorizePayment?.loading === true">
+        <p>Please Wait I delay this request stub in purpose</p>
+        <mat-spinner class="spinner"></mat-spinner>
+      </div>
+    </div>
+    <div *ngIf="authorizePayment?.data?.outcome === outcomeStatuses.Authorized">
+      <worldpay-cancel-payment></worldpay-cancel-payment>
+    </div>
+  </div>
+</div>

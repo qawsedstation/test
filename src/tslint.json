@@ -1,0 +1,17 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "worldpay",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "worldpay",
+            "kebab-case"
+        ]
+    }
+}
